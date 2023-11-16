@@ -1,0 +1,94 @@
+<!-- checkboxes.component.html -->
+
+<form [formGroup]="optionsForm">
+  <div class="container">
+
+    <!-- Contenido header -->
+    <div class="row text-center custom-rounding mb-4" style="background-image: url('../assets/img/iCg.gif'); background-repeat: no-repeat; background-size:cover; background-position-y: center;">
+      <h1 class="banner-text py-5 text-shadow" >Aconsegueix la millor qualitat</h1>
+    </div>
+
+    <!-- Contenido de la primera tarjeta (SEO) -->
+    <div class="row shadow custom-rounding mt-4">
+
+      <div class="col-4 ps-2">
+        <h3 class="title ms-3 mt-2">Seo</h3>
+        <p class="ms-3">Programació d'una web responsive completa.</p>
+      </div>
+
+      <div class="col mx-auto my-auto py-2">
+        <h1 class="price text-end">300<span class="smaller-euro"> €</span></h1>
+      </div>
+
+      <div class="col d-flex align-items-center justify-content-end">
+        <div class="form-check">
+          <input class="form-check-input me-2 py-2" id="seo" type="checkbox" formControlName="seo" (change)="calculateTotalBudget()">
+          <label class="form-check-label check-add-text me-3" for="seo">Afegir</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenido de la segunda tarjeta (ADS) -->
+    <div class="row shadow custom-rounding my-4">
+
+      <div class="col-4 ps-2 py-2">
+        <h3 class="title ms-3 mt-2">Ads</h3>
+        <p class="ms-3">Programació d'una web responsive completa.</p>
+      </div>
+
+      <div class="col mx-auto my-auto py-2">
+        <h1 class="price text-end">400<span class="smaller-euro"> €</span></h1>
+      </div>
+
+      <div class="col d-flex align-items-center justify-content-end">
+        <div class="form-check">
+          <input class="form-check-input me-2 py-2" id="ads" type="checkbox" formControlName="ads" (change)="calculateTotalBudget()">
+          <label class="form-check-label check-add-text me-3" for="ads">Afegir</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenido de la tercera tarjeta (WEB) -->
+    <div class="row shadow custom-rounding mb-5">
+
+      <div class="col-4 ps-2 py-2">
+        <h3 class="title ms-3 mt-2">Web</h3>
+        <p class="ms-3">Programació d'una web responsive completa.</p>
+      </div>
+
+      <div class="col mx-auto my-auto py-2">
+        <h1 class="price text-end">500<span class="smaller-euro"> €</span></h1>
+      </div>
+
+      <div class="col d-flex align-items-center justify-content-end">
+        <div class="form-check">
+          <input class="form-check-input me-2 py-2" id="web" type="checkbox" formControlName="web" (change)="calculateTotalBudget()">
+          <label class="form-check-label check-add-text me-3" for="web">Afegir</label>
+        </div>
+      </div>
+
+      <div class="row text-end">
+        <div class="col">
+          <ng-container *ngIf="optionsForm.get('web')!.value">
+            <app-panel
+            [pagesNumber]="optionsForm.get('numPages')!.value"
+            [languagesNumber]="optionsForm.get('numIdiomas')!.value"
+            (pagesChange)="onPagesChange($event)"
+            (languagesChange)="onLanguagesChange($event)"
+            (totalBudgetChange)="calculateTotalBudget()"
+            ></app-panel>
+          </ng-container>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="col d-flex align-items-center justify-content-end me-3">
+      <h5 class="me-4">Preu pressupostat: </h5>
+      <h1 class="price"> {{ optionsForm.get('totalBudget')!.value }} <span class="smaller-euro"> €</span></h1>
+    </div>
+
+  </div>
+
+</form>

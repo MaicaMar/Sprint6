@@ -1,0 +1,46 @@
+/* panel.component.css */
+
+.numPagesCss, .numLanguagesCss {
+  font-family: 'Quicksand';
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.custom-button {
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  font-family: 'Quicksand';
+  font-weight: 500;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' 0,
+  'opsz' 24,
+}
+
+/* Para animar los iconos */
+.pulse {
+  animation: pulse 3s infinite;
+  color:royalblue
+}
+
+@keyframes pulse {
+  0% {
+    font-variation-settings: 'wght' 100;
+  }
+  50% {
+    font-variation-settings: 'wght' 700;
+  }
+  100% {
+    font-variation-settings: 'wght' 100;
+  }
+}

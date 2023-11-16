@@ -1,0 +1,12 @@
+/* modal-panel.component.css */
+
+.title {
+  font-family: 'Quicksand';
+  font-weight: 700;
+}
+
+p {
+  font-family: 'Quicksand';
+  font-weight: 600;
+  font-size: 14px;
+}
