@@ -8,7 +8,7 @@
     </button>
     <label for="numPages" class="numPagesCss me-3 d-flex">Número de pàgines </label>
     <button class="btn btn-outline-secondary rounded-circle custom-button" type="button" (click)="decrementPages()">-</button>
-    <input type="text" id="numPages" class="rounded mx-2 text-center" style="width: 30px;" [(ngModel)]="pagesNumber" (change)="calculateTotalBudget()">
+    <input type="text" id="numPages" name="pages" class="rounded mx-2 text-center" style="width: 30px;" [(ngModel)]="pagesNumber" (change)="calculateTotalBudget()">
     <button class="btn btn-outline-secondary rounded-circle custom-button" type="button" (click)="incrementPages()">+</button>
   </div>
 
@@ -18,7 +18,7 @@
     </button>
     <label for="numIdiomas" class="numLanguagesCss me-3 d-flex text-wrap ">Número de llenguatges </label>
     <button class="btn btn-outline-secondary rounded-circle custom-button" type="button" (click)="decrementLanguages()">-</button>
-    <input type="text" id="numIdiomas" class="rounded mx-2 text-center" style="width: 30px;" [(ngModel)]="languagesNumber" (change)="calculateTotalBudget()">
+    <input type="text" id="numIdiomas" name="languages" class="rounded mx-2 text-center" style="width: 30px;" [(ngModel)]="languagesNumber" (change)="calculateTotalBudget()">
     <button class="btn btn-outline-secondary rounded-circle custom-button" type="button" (click)="incrementLanguages()">+</button>
   </div>
 
